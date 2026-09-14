@@ -1,80 +1,44 @@
-# FlutterApp — Desenvolvimento Mobile I (UESB — 2026.2)
+# Desenvolvimento Mobile I — Atividade 6
 
-Este repositório contém um esqueleto inicial de um aplicativo Flutter educacional para a disciplina "Desenvolvimento Mobile I" da UESB — 2026.2.
+UESB · ADS · 2026.2 · Unidade I, Semana 3.
 
-Objetivo
---------
-Preparar um aplicativo Flutter simples, funcional e documentado que serve como ponto de partida para os exercícios da disciplina. O material inclui uma interface introdutória em português, um teste funcional básico e instruções para configurar e validar o projeto localmente.
+## Objetivo
 
-Estrutura do repositório
-------------------------
-- lib/main.dart — código-fonte principal do aplicativo (interface introdutória em português).
-- test/widget_test.dart — teste funcional que valida a interação principal (contador/ botão).
-- pubspec.yaml — metadados e dependências do Flutter.
-- .gitignore — arquivo já presente para Flutter/Dart.
+Configurar Flutter no GitHub Codespaces, executar o aplicativo web e entregar o link da branch da atividade no GitHub. Prazo informado no Moodle: 14/09/2026 às 23:59. Valor: 10 pontos (peso 5).
 
-Requisitos
----------
-- Flutter SDK instalado (recomenda-se a versão estável atual). Veja https://flutter.dev para instruções.
-- Android SDK e/ou Chrome (para alvo web) caso queira executar em emulador/dispositivo.
-- Conexão com a internet para baixar dependências.
+## Referências
 
-Como executar localmente
-------------------------
-1. Clone o repositório:
+- Agenda da Semana 3: https://moodle4.uesb.br/mod/page/view.php?id=30091
+- Roteiro de Estruturas de Controle: https://moodle4.uesb.br/mod/resource/view.php?id=30135
+- Videoaula GitHub Codespaces: https://www.youtube.com/watch?v=mnEUJM4pH0Q
+- Dart, capítulos II e III: https://moodle4.uesb.br/mod/resource/view.php?id=30378
 
-   git clone https://github.com/uesb-academicos/FlutterApp.git
-   cd FlutterApp
+O arquivo do roteiro descreve a configuração do ambiente e a publicação da branch semana1; não há enunciados adicionais de exercícios no documento. O aplicativo e os testes que já estavam no repositório foram preservados.
 
-2. Baixe dependências:
+## Estrutura
 
-   flutter pub get
+- .devcontainer/devcontainer.json: imagem Flutter e extensões Dart/Flutter.
+- .vscode/launch.json: execução Flutter Web na porta 8080.
+- lib/main.dart: aplicativo introdutório e contador.
+- test/widget_test.dart: teste do contador.
+- web/: suporte web gerado pelo Flutter.
+- docs/historico/README-original.md: README anterior preservado.
 
-3. Valide/análise estática:
+## Como executar
 
-   flutter analyze
+No Codespaces, use Codespaces: Rebuild Container para aplicar a configuração. Depois, na raiz do projeto:
 
-4. Execute os testes:
+flutter pub get
+flutter run -d web-server --web-port=8080 --web-hostname=0.0.0.0
 
-   flutter test
+Também é possível selecionar Flutter Web em Executar e Depurar e pressionar F5. Abra a porta 8080 na aba Portas.
 
-5. Liste dispositivos disponíveis:
+## Validação
 
-   flutter devices
+Execute dart format, flutter analyze, flutter test e flutter build web.
 
-6. Execute a aplicação (exemplo para web):
+Validação anterior: Flutter 3.47.4 e Dart 3.13.3; análise sem problemas e teste do contador aprovado.
 
-   flutter run -d chrome
+## Entrega
 
-Comandos de validação (resumo)
-------------------------------
-- flutter pub get — baixa dependências
-- flutter analyze — análise estática
-- flutter test — executa testes
-- flutter devices — lista dispositivos conectados/emuladores
-
-Status do projeto
------------------
-- Implementado: esqueleto do app em Flutter com interface introdutória em português; teste funcional básico.
-- Pendências: arquivos da estrutura completa gerada pelo comando `flutter create` (android/, ios/, web/, macos/, windows/) não foram adicionados por aqui — recomenda-se gerar o projeto localmente com `flutter create .` caso queira a estrutura completa e depois subir os arquivos.
-
-Boas práticas e segurança
-------------------------
-- Não há chaves, senhas, tokens ou arquivos .env incluídos.
-- Não foram habilitados serviços externos (Firebase, AdMob, etc.).
-
-O que eu alterei/criei neste commit
-----------------------------------
-- lib/main.dart
-- test/widget_test.dart
-- pubspec.yaml
-- README.md (este arquivo)
-
-Observações finais
-------------------
-Eu não executei os comandos `flutter pub get`, `flutter analyze`, `flutter test` ou `flutter devices` no ambiente remoto — você deve rodá-los localmente ou no Cloud Shell após autenticar com o GitHub e enviar seu projeto local completo (se houver). Siga as instruções acima.
-
-Se quiser, eu posso:
-- adicionar um GitHub Action para rodar `flutter analyze` e `flutter test` automaticamente em PRs;
-- preparar a estrutura completa do projeto gerada pelo `flutter create` (mas isso adiciona muitos arquivos grandes).
-
+Publicar a branch semana1 e enviar seu link permanente na Atividade 6 do Moodle. O endereço do Codespace é apenas o ambiente de desenvolvimento. A entrega da Semana 4 possui prazo separado, em 21/09/2026.
